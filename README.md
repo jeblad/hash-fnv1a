@@ -60,8 +60,10 @@ If you're adding the _doctest_ as a submodule, then pull an updated version.
 The usual development cycle is to compile the test file, and then run it
 
 ```bash
-g++ -Wall -Wextra -Werror -std=c++20 -I ./include/ -I ./src/ -o hash-fnv1a-test test/hash-fnv1a-test.cpp
+g++ -Wall -Wextra -Werror -std=c++20  -O3 -I ./include/ -I ./src/ -o hash-fnv1a-test test/hash-fnv1a-test.cpp
 ```
+
+It should be compiled with optimization level 3 to get a speedup from the bit shift multiply.
 
 Then run the executable `hash-fnv1a-test` that has the actual tests.
 
