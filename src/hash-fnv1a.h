@@ -2,7 +2,11 @@
 
 Fowler–Noll–Vo 1a (or FNV1a) non-cryptographic hash function
 
-This is a pretty stright-forward implementation of the hash function, 
+This is a pretty stright-forward implementation of the hash function
+
+TODO: It should probably be implemented as a template that specializes
+      for a few parametrized primes. The offset might be recalculated
+      for each instance.
 
 */
 
