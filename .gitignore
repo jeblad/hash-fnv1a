@@ -39,3 +39,7 @@
 
 # debug information files
 *.dwo
+
+#specific files
+doctest.h
+hash-fnv1a-test
