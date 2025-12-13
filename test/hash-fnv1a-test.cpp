@@ -7,7 +7,7 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 
-TEST_CASE("testing the random generator with 8 bit and default constructor") {
+TEST_CASE("testing the hash function for repeatability") {
     const std::string str1 = "this is the test string 1";
     const std::string str2 = "this is the test string 2";
     CHECK(hash::fnv1a("") == 2166136261);
