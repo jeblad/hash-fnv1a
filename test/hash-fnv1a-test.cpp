@@ -15,3 +15,10 @@ TEST_CASE("testing the hash function for repeatability") {
     CHECK(hash::fnv1a(str2) == 2363825195);
     CHECK(hash::fnv1a(str1) != hash::fnv1a(str2));
 }
+
+
+TEST_CASE("testing the hash function's modulo operation'") {
+    const std::string str = "this is the test string 1";
+    CHECK(hash::fnv1a(str) == 2380602814);
+    CHECK(hash::fnv1a(str, 0xff) == 79);
+}

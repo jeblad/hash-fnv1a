@@ -10,6 +10,7 @@ This is a pretty stright-forward implementation of the hash function,
 
 #include <string>
 #include <cstdint>
+#include <optional>
 #include <concepts>
 
 #define NO_FNV_GCC_OPTIMIZATION false
@@ -17,7 +18,8 @@ This is a pretty stright-forward implementation of the hash function,
 namespace hash{
 
     uint32_t fnv1a(
-        std::string str
+        std::string str,
+        std::optional<uint32_t> divisor=std::nullopt
     ) {
         const uint32_t offset = 2166136261;
         const uint32_t prime = 16777619;
@@ -32,7 +34,7 @@ namespace hash{
                 hash += (hash << 1) + (hash << 4) + (hash << 7) + (hash << 8) + (hash << 24);
 #endif
             }
-        return hash;
+        return divisor.has_value() ? (hash % divisor.value()) : hash;
     }
 
 }
