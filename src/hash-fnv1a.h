@@ -7,6 +7,7 @@
     http://www.isthe.com/chongo/tech/comp/fnv/index.html
 
     Copyright (c) 2025 John Erling Blad <jeblad@gmail.com>
+    with additional (c) as appropriate.
 
     Distributed under the GNU General Public License v3.
     See accompanying file LICENSE or the page at
