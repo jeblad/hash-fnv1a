@@ -11,32 +11,38 @@ This is a pretty stright-forward implementation of the hash function
 #include <string>
 #include <cstdint>
 #include <concepts>
-#include <iostream>
 
 namespace hash{
 
     template<std::unsigned_integral T, uint64_t prime, uint64_t offset=0>
     class FNV1a {
         private:
+
         const T _prime{static_cast<T>(prime)};
         T _offset{0};
 
         public:
 
         FNV1a() {
-            std::cout << "generalization" << "\n";
-            if (offset) {
-                _offset = static_cast<T>(offset);
-            }
-            else {
-                _offset = hash("chongo <Landon Curt Noll> /\\../\\");
-            }
+            _offset = offset
+                ? static_cast<T>(offset)
+                : basis("chongo <Landon Curt Noll> /\\../\\");
         }
 
+        // the fnv0 is still used while constructing the basis offset
+        T basis(const std::string str) {
+            T _hval = 0;
+            for (unsigned int i = 0; i < str.length(); i++) {
+                _hval *= _prime;
+                _hval ^= (T) str[i];
+            }
+            return _hval;
+        }
+
+        // the fnv1a is used while hashing
         T hash(
             std::string str
         ) {
-
             T _hval = _offset;
             for (unsigned int i = 0; i < str.length(); i++) {
                 _hval ^= (T) str[i];
@@ -51,13 +57,10 @@ namespace hash{
     template<std::unsigned_integral T>
     class FNV1a<T, 16777619ULL, 2166136261ULL> {
         private:
+
         const T _offset{static_cast<T>(2166136261ULL)};
 
         public:
-
-        FNV1a() {
-            std::cout << "spesialization" << "\n";
-        }
 
         T hash(
             std::string str
@@ -75,11 +78,10 @@ namespace hash{
     template<std::unsigned_integral T>
     class FNV1a<T, 1099511628211ULL, 14695981039346656037ULL> {
         private:
+    
         const T _offset{static_cast<T>(14695981039346656037ULL)};
 
         public:
-
-        FNV1a() {}
 
         T hash(
             std::string str
