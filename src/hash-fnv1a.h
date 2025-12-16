@@ -1,19 +1,19 @@
 /*
 
-Fowler–Noll–Vo 1a (or FNV1a) non-cryptographic hash function
+    Fowler–Noll–Vo 1a (or FNV1a) non-cryptographic hash function
 
-This is a pretty stright-forward implementation of the hash function
-described at
-http://www.isthe.com/chongo/tech/comp/fnv/index.html
+    This is a pretty stright-forward implementation of the hash function
+    described at
+    http://www.isthe.com/chongo/tech/comp/fnv/index.html
 
-Copyright (c) 2025 John Erling Blad <jeblad@gmail.com>
+    Copyright (c) 2025 John Erling Blad <jeblad@gmail.com>
 
-Distributed under the GNU General Public License v3.
-See accompanying file LICENSE or the page at
-https://www.gnu.org/licenses/
+    Distributed under the GNU General Public License v3.
+    See accompanying file LICENSE or the page at
+    https://www.gnu.org/licenses/
 
-The documentation can be found at the library's page:
-https://github.com/jeblad/hash-fnv1a/blob/main/README.md
+    The documentation can be found at the library's page:
+    https://github.com/jeblad/hash-fnv1a/blob/main/README.md
 
 */
 
