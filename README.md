@@ -38,10 +38,18 @@ The most common use is to use the library to generate a hash from a string
 
 ```C++
 #include "hash-fnv1a.h"
-hash::fnv1a("some string");
+
+// with a non-standard prime or base the general implementation will be used
+// the base will be calculated if missing
+hash::FNV1a<uint32_t, 16777499ULL> fnv1a{};
+// with a standard prime and base the specialization will be used
+// unless it is blocked at compile time with NO_FNV_OPTIMIZATION
+hash::FNV1a<uint32_t, 16777619ULL, 2166136261ULL> fnv1a{};
+// then call the hash function
+uint32_t result = fnv1a.hash("some string");
 ```
 
-It is possible to force the library to use ordinary multiply by setting `NO_FNV_GCC_OPTIMIZATION`. Otherwise it will use bit shifts. 
+It is possible to force the library to use ordinary multiply by setting `NO_FNV_OPTIMIZATION`. Otherwise, it will use bit shifts. 
 
 ## Development
 

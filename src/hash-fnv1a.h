@@ -63,7 +63,7 @@ namespace hash{
         }
     };
 
-    #if !defined(NO_FNV_GCC_OPTIMIZATION)
+    #if !defined(NO_FNV_OPTIMIZATION)
 
     template<std::unsigned_integral T>
     class FNV1a<T, 16777619ULL, 2166136261ULL> {
