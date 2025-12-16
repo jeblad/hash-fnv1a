@@ -1,5 +1,11 @@
 # hash-fnv1a
 
+
+![stability-unstable](https://img.shields.io/badge/stability-experimental-orange.svg?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues-raw/jeblad/hash-fnv1a?style=for-the-badge)
+
+## Scope
+
 Fowler–Noll–Vo 1a (or FNV1a) non-cryptographic hash function
 
 From the page [FNV Hash](http://www.isthe.com/chongo/tech/comp/fnv/index.html) by _Landon Curt Noll_ with additional edits by [jeblad](mailto:jeblad@gmail.com) (Dec 13, 2025).
