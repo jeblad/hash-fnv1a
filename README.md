@@ -1,6 +1,5 @@
 # hash-fnv1a
 
-
 ![stability-unstable](https://img.shields.io/badge/stability-experimental-orange.svg?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues-raw/jeblad/hash-fnv1a?style=for-the-badge)
 
@@ -49,7 +48,7 @@ hash::FNV1a<uint32_t, 16777619ULL, 2166136261ULL> fnv1a{};
 uint32_t result = fnv1a.hash("some string");
 ```
 
-It is possible to force the library to use ordinary multiply by setting `NO_FNV_OPTIMIZATION`. Otherwise, it will use bit shifts. 
+It is possible to force the library to use ordinary multiply by setting `NO_FNV_OPTIMIZATION`. Otherwise, it will use bit shifts.
 
 ## Development
 
